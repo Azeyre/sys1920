@@ -3,10 +3,15 @@
 
 int mon_strlen(const char *s)
 {
-	const char *sc;
-
-	for(sc = s ; *sc != '\0' ; sc++);
-	return sc - s;
+	char c1;
+	int t = 0;
+	c1 = *s++;
+	while(c1 != '\0')
+	{		
+		c1 = *s++;
+		t++;
+	}
+	return t;
 }
 
 int mon_strcmp(const char *cs, const char *ct)
