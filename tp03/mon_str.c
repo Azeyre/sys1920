@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "mon_str.h"
 
 int mon_strlen(char[] s)
 {
@@ -15,7 +16,7 @@ int mon_strlen(const char *s)
 	return sc - s;
 }
 
-int strcmp(const char *cs, const char *ct)
+int mon_strcmp(const char *cs, const char *ct)
 {
 	unsigned char c1, c2;
 
@@ -30,7 +31,7 @@ int strcmp(const char *cs, const char *ct)
 	return 0;
 }
 
-int strncmp(const char *cs, const char *ct, int count)
+int mon_strncmp(const char *cs, const char *ct, int count)
 {
 	unsigned char c1, c2;
 
@@ -46,7 +47,7 @@ int strncmp(const char *cs, const char *ct, int count)
 	return 0;
 }
 
-char *strcat(char *dest, const char *src)
+char *mon_strcat(char *dest, const char *src)
 {
 	char *tmp = dest;
 
@@ -64,7 +65,7 @@ char *mon_strchr(char *s, int c)
 	return (char *)s;
 }
 
-char *strstr(const char *s1, const char *s2)
+char *mon_strstr(const char *s1, const char *s2)
 {
 	size_t l1, l2;
 
