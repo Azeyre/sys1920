@@ -1,6 +1,5 @@
 #ifndef __MON_STR_H__
 #define __MON_STR_H__
-int mon_strlen(char[] s);
 int mon_strlen(const char *s);
 int mon_strcmp(const char *cs, const char *ct);
 int mon_strncmp(const char *cs, const char *ct, int count);
