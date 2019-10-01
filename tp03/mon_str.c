@@ -3,7 +3,7 @@
 
 int mon_strlen(const char *s)
 {
-	char c1 = *s;
+	char c1 = *s; 
 	int t = 0;
 	while(c1 != '\0')
 	{		
