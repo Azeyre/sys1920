@@ -5,12 +5,15 @@ int main(void)
 {
 	char c[] = "Bonjour oui";
 	char c2[] = "Bonjour non";
-	char c3[] = "Bonjour oui";
+	char c3[] = "Conjour oui";
+	char c4[] = "Bonjour oui";
 	char b[] = "our";
 	printf("Longueur : %d\n", mon_strlen(c));
 	printf("Comparaison : %d\n", mon_strcmp(c, c2));
 	printf("Comparaison : %d\n", mon_strcmp(c, c3));
+	printf("Comparaison : %d\n", mon_strcmp(c, c4));
 	printf("Comparaison : %d\n", mon_strncmp(c, c2, 6));
+	printf("Comparaison : %d\n", mon_strncmp(c, c3, 6));
 	printf("%s\n", mon_strcat(c, c2));
 	printf("%s\n", mon_strchr(c3, 'r'));
 	printf("%s\n", mon_strstr(c3, b));

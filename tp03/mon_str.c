@@ -3,12 +3,12 @@
 
 int mon_strlen(const char *s)
 {
-	char c1;
+	char c1 = *s;
 	int t = 0;
-	c1 = *s++;
 	while(c1 != '\0')
 	{		
-		c1 = *s++;
+		s++;
+		c1 = *s;
 		t++;
 	}
 	return t;
@@ -16,15 +16,15 @@ int mon_strlen(const char *s)
 
 int mon_strcmp(const char *cs, const char *ct)
 {
-	char c1, c2;
-	c1 = *cs++;
-	c2 = *ct++;
+	char c1 = *cs, c2 = *ct;
 
 	while (c1 != '\0' && c2 != '\0') {
-		c1 = *cs++;
-		c2 = *ct++;
-		if (c1 != c2)
+		c1 = *cs;
+		c2 = *ct;
+		if (c1 != c2) 
 			return c1 < c2 ? -1 : 1;
+		cs++;
+		ct++;
 	}
 	return 0;
 }
@@ -34,13 +34,15 @@ int mon_strncmp(const char *cs, const char *ct, int count)
 	char c1, c2;
 
 	while (count) {
-		c1 = *cs++;
-		c2 = *ct++;
+		c1 = *cs;
+		c2 = *ct;
 		if (c1 != c2)
 			return c1 < c2 ? -1 : 1;
 		if (!c1)
 			break;
 		count--;
+		cs++;
+		ct++;
 	}
 	return 0;
 }
@@ -57,9 +59,11 @@ char *mon_strcat(char *dest, const char *src)
 
 char *mon_strchr(char *s, int c)
 {
-	for (; *s != (char)c; s++)
+	while(*s != (char) c){
 		if (*s == '\0')
 			return NULL;
+		s++;
+	}	
 	return (char *)s;
 }
 
